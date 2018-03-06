@@ -1,5 +1,5 @@
 # Rohypnol
-Feed your junit tests with rohypnole and reveal race conditions!
+Feed your junit tests with rohypnol and reveal race conditions!
 
 The idea is to use a Java-agent to insert randomized pauses into your code. This should reveal race-conditions.
 
