@@ -13,3 +13,6 @@ Currently hard-coded. It instruments only classes starting with `com.hazelcast` 
 - Configurable strategy to select classes & methods to instrument.
 - Configurable {White/Black}list to feed the pill to selected threads only.
 - Multiple strategies to generate sleep duration. Currently it always uses uniform distribution.
+
+## Credits:
+[@Holmistr](https://github.com/Holmistr) came-up with the idea. Implementations bugs are mine. 
