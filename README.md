@@ -15,4 +15,4 @@ Currently hard-coded. It instruments only classes starting with `com.hazelcast` 
 - Multiple strategies to generate sleep duration. Currently it always uses uniform distribution.
 
 ## Credits:
-[@Holmistr](https://github.com/Holmistr) came-up with the idea. Implementations bugs are mine. 
+[@Holmistr](https://github.com/Holmistr) came-up with the idea. Implementation bugs are mine. 
