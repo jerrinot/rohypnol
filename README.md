@@ -1,7 +1,7 @@
 # Rohypnol
 Feed your junit tests with rohypnole and reveal race conditions!
 
-The idea is to use Java-agent to instrument bytecode to insert randomized pauses into your code. This should reveal race-conditions.
+The idea is to use a Java-agent to insert randomized pauses into your code. This should reveal race-conditions.
 
 ## Usage:
 Start your JVM with `-javaagent:<path>/rohypnol-1.0-SNAPSHOT-allinone.jar`
