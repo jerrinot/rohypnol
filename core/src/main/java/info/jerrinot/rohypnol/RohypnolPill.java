@@ -3,15 +3,14 @@ package info.jerrinot.rohypnol;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.locks.LockSupport;
 
-import static info.jerrinot.rohypnol.Constants.MAXIMUM_PAUSE_NANOS;
-import static info.jerrinot.rohypnol.Constants.MINIMUM_INTERVAL_BETWEEN_PAUSES_NANOS;
+import static info.jerrinot.rohypnol.Config.MAXIMUM_PAUSE_NANOS;
+import static info.jerrinot.rohypnol.Config.MINIMUM_INTERVAL_BETWEEN_PAUSES_NANOS;
+
 
 public final class RohypnolPill {
     private static final ThreadLocal<Long> LAST_PAUSE = new ThreadLocal<>();
 
     public static void use() {
-//        System.out.println("Using a rohypol pill");
-
         long now = System.nanoTime();
         if (!shouldPause(now)) {
             return;
