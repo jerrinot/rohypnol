@@ -5,7 +5,7 @@
     <groupId>info.jerrinot</groupId>
     <artifactId>rohypnol-root</artifactId>
     <packaging>pom</packaging>
-    <version>0.1</version>
+    <version>0.2-SNAPSHOT</version>
 
     <modules>
         <module>maven</module>
@@ -35,7 +35,7 @@
         <connection>scm:git:git@github.com:jerrinot/rohypnol.git</connection>
         <developerConnection>scm:git:git@github.com:jerrinot/rohypnol.git</developerConnection>
         <url>https://github.com/jerrinot/rohypnol</url>
-        <tag>v0.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <properties>
