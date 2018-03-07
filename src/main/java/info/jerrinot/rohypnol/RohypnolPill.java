@@ -6,27 +6,26 @@ import java.util.concurrent.locks.LockSupport;
 import static info.jerrinot.rohypnol.Constants.MAXIMUM_PAUSE_NANOS;
 import static info.jerrinot.rohypnol.Constants.MINIMUM_INTERVAL_BETWEEN_PAUSES_NANOS;
 
-public class RohypnolPill {
+public final class RohypnolPill {
     private static final ThreadLocal<Long> LAST_PAUSE = new ThreadLocal<>();
 
     public static void use() {
 //        System.out.println("Using a rohypol pill");
 
-        if (!shouldPause()) {
+        long now = System.nanoTime();
+        if (!shouldPause(now)) {
             return;
         }
         long pauseNanos = calculatePauseNanos();
         LockSupport.parkNanos(pauseNanos);
+        LAST_PAUSE.set(now + pauseNanos);
     }
 
-    private static boolean shouldPause() {
+    private static boolean shouldPause(long now) {
         Long lastPause = LAST_PAUSE.get();
-        long now = System.nanoTime();
         if (lastPause == null) {
-            LAST_PAUSE.set(now);
             return true;
         } else if (lastPause < now - MINIMUM_INTERVAL_BETWEEN_PAUSES_NANOS) {
-            LAST_PAUSE.set(now);
             return true;
         } else {
             return false;
